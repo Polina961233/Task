@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "d885a0b8-9637-4aea-8399-76ba9984fe55",
+		"name": "Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user\": \"\",\r\n\"password\": \"\",\r\n\"firstName\": \"\", \r\n\"lastName\": \"\", \r\n\"adress\":\"\", \r\n\"country\": \"\",\r\n\"emai\":\"\", \r\n\"phone\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User login",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user\": \"\",\r\n\"password\": \"\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRNNWtRRHNmc3VPRWpRVC9WTk94cGF1ZVhkZGpzOU4uanAwbkd6VlVhcnRyMkp6MWRzWmZwRyIsImZpcnN0TmFtZSI6IlBvbGkiLCJsYXN0TmFtZSI6IlRlc3RvdiIsImFkcmVzcyI6IlRlc3RvdmkiLCJjb3VudHJ5IjoiQkciLCJwaG9uZSI6IjEyMjQ2OCIsImlhdCI6MTYxNzI4MjQxOH0.fwWxdmxq-gouZDY0DqrwHpbjnJ-g3kO-QMCo2UmjFp4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"password\": \"\",\r\n\"firstName\": \"\", \r\n\"lastName\": \"\", \r\n\"adress\":\"\", \r\n\"country\": \"\",\r\n\"emai\":\"\", \r\n\"phone\":\"\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/update/{{user}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"update",
+						"{{user}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRNNWtRRHNmc3VPRWpRVC9WTk94cGF1ZVhkZGpzOU4uanAwbkd6VlVhcnRyMkp6MWRzWmZwRyIsImZpcnN0TmFtZSI6IlBvbGkiLCJsYXN0TmFtZSI6IlRlc3RvdiIsImFkcmVzcyI6IlRlc3RvdmkiLCJjb3VudHJ5IjoiQkciLCJwaG9uZSI6IjEyMjQ2OCIsImlhdCI6MTYxNzI4MjQxOH0.fwWxdmxq-gouZDY0DqrwHpbjnJ-g3kO-QMCo2UmjFp4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user\": \"\",\r\n\"password\": \"\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/unregister",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"unregister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User information",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXNzd29yZCI6IiQyYSQxMCRmRndmSTU0M0cwb0U5bmlEOHJ3dDEuLk5NLnlSU1VQY2xMdzVDb0tPNHVBakJ6SlExdFpwdSIsImZpcnN0TmFtZSI6IlBvbGkiLCJsYXN0TmFtZSI6IlRlc3RvdiIsImFkcmVzcyI6IlRlc3RvdmkiLCJjb3VudHJ5IjoiQkciLCJwaG9uZSI6IjEyMjQ2OCIsImlhdCI6MTYxNzI3NDMwN30.a5ZQbnpZ2bmreWzdiuPKAT3qNcFKBuN4IWdxrnO2yvs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/user/{{user}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"user",
+						"{{user}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
